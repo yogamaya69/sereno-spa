@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERENO | Massoterapia e Bem-estar</title>
+    <meta name="description" content="Encontre o seu equilíbrio na Sereno Massoterapia e Bem-estar. Oferecemos massagens relaxantes, terapêuticas e tratamentos para renovar corpo e mente.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Config for Custom Colors and Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        sereno: {
+                            light: '#f4f6f4',   // Off-white/greenish background
+                            sage: '#8fae9b',    // Primary soothing green
+                            dark: '#4a5e52',    // Dark text/accents
+                            sand: '#e8e2d9',    // Warm sand background
+                            gold: '#c9a87c'     // Accent color
+                        }
+                    },
+                    fontFamily: {
+                        heading: ['"Cormorant Garamond"', 'serif'],
+                        body: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Styles & Utilities */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #4a5e52;
+            background-color: #f4f6f4;
+        }
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .hero-pattern {
+            background-image: linear-gradient(rgba(74, 94, 82, 0.4), rgba(74, 94, 82, 0.6)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <header class="fixed w-full bg-white/90 backdrop-blur-md z-50 shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-heading text-3xl font-semibold text-sereno-dark tracking-widest uppercase">
+                        Sereno<span class="text-sereno-sage text-4xl leading-none">.</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#inicio" class="text-sereno-dark hover:text-sereno-sage transition-colors duration-200 text-sm tracking-wide uppercase font-semibold">Início</a>
+                    <a href="#sobre" class="text-sereno-dark hover:text-sereno-sage transition-colors duration-200 text-sm tracking-wide uppercase font-semibold">Sobre</a>
+                    <a href="#servicos" class="text-sereno-dark hover:text-sereno-sage transition-colors duration-200 text-sm tracking-wide uppercase font-semibold">Serviços</a>
+                    <a href="#depoimentos" class="text-sereno-dark hover:text-sereno-sage transition-colors duration-200 text-sm tracking-wide uppercase font-semibold">Depoimentos</a>
+                    <a href="#contato" class="text-sereno-dark hover:text-sereno-sage transition-colors duration-200 text-sm tracking-wide uppercase font-semibold">Contato</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:flex items-center">
+                    <a href="#agendar" onclick="openWhatsApp()" class="bg-sereno-sage hover:bg-sereno-dark text-white px-6 py-2 rounded-full transition-colors duration-300 shadow-md text-sm tracking-wide uppercase font-semibold flex items-center gap-2">
+                        <i class="ph ph-calendar-plus text-lg"></i>
+                        Agendar
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-sereno-dark hover:text-sereno-sage focus:outline-none p-2">
+                        <i class="ph ph-list text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="block px-3 py-2 text-sereno-dark hover:text-sereno-sage hover:bg-sereno-light rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" class="block px-3 py-2 text-sereno-dark hover:text-sereno-sage hover:bg-sereno-light rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="block px-3 py-2 text-sereno-dark hover:text-sereno-sage hover:bg-sereno-light rounded-md text-base font-medium">Serviços</a>
+                <a href="#depoimentos" class="block px-3 py-2 text-sereno-dark hover:text-sereno-sage hover:bg-sereno-light rounded-md text-base font-medium">Depoimentos</a>
+                <a href="#contato" class="block px-3 py-2 text-sereno-dark hover:text-sereno-sage hover:bg-sereno-light rounded-md text-base font-medium">Contato</a>
+                <a href="#agendar" onclick="openWhatsApp()" class="block w-full text-center mt-4 bg-sereno-sage text-white px-4 py-3 rounded-md font-medium">Agendar Sessão</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative hero-pattern h-screen flex items-center justify-center text-center mt-0 pt-20">
+        <div class="relative z-10 px-4 sm:px-6 lg:px-8 max-w-4xl">
+            <span class="block text-white/90 text-sm md:text-base tracking-[0.3em] uppercase mb-4 animate-fade-in-up">Bem-estar integral</span>
+            <h1 class="text-5xl md:text-7xl text-white font-heading mb-6 drop-shadow-md">Seu refúgio de <br/><span class="italic font-light">paz e renovação</span></h1>
+            <p class="text-lg md:text-xl text-white/90 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+                Desconecte-se da rotina e reconecte-se com você mesmo através de terapias manuais pensadas para o seu equilíbrio físico e mental.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="openWhatsApp()" class="w-full sm:w-auto bg-sereno-sage hover:bg-white hover:text-sereno-dark text-white px-8 py-4 rounded-full transition-all duration-300 shadow-lg text-sm tracking-widest uppercase font-bold">
+                    Agende seu horário
+                </button>
+                <a href="#servicos" class="w-full sm:w-auto bg-transparent border border-white hover:bg-white/10 text-white px-8 py-4 rounded-full transition-all duration-300 text-sm tracking-widest uppercase font-bold">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <!-- Image -->
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -inset-4 bg-sereno-sand rounded-tl-[100px] rounded-br-[100px] z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop" alt="Ambiente relaxante de massagem" class="relative z-10 w-full h-[500px] object-cover rounded-tl-[80px] rounded-br-[80px] shadow-xl">
+                </div>
+                
+                <!-- Text -->
+                <div class="w-full lg:w-1/2">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="h-px w-12 bg-sereno-gold"></div>
+                        <span class="text-sereno-gold tracking-[0.2em] uppercase text-sm font-semibold">Nossa Essência</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-heading text-sereno-dark mb-6 leading-tight">O toque que cura e <span class="italic text-sereno-sage">transforma</span>.</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed text-lg">
+                        Na <strong>SERENO Massoterapia e Bem-estar</strong>, acreditamos que cuidar de si não é um luxo, mas uma necessidade fundamental. Nossa missão é proporcionar um espaço seguro, acolhedor e profundamente relaxante, onde as tensões se dissolvem e a energia vital é restaurada.
+                    </p>
+                    <p class="text-gray-600 mb-8 leading-relaxed">
+                        Nossa equipe de terapeutas qualificados utiliza técnicas holísticas e personalizadas para atender às necessidades únicas do seu corpo. Seja para aliviar dores crônicas, reduzir o estresse diário ou simplesmente ter um momento só seu, nós cuidamos de você.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start gap-3">
+                            <div class="text-sereno-sage bg-sereno-light p-2 rounded-full">
+                                <i class="ph ph-plant text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xl font-bold text-sereno-dark">Produtos Naturais</h4>
+                                <p class="text-sm text-gray-500">Óleos essenciais puros.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="text-sereno-sage bg-sereno-light p-2 rounded-full">
+                                <i class="ph ph-hands-clapping text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-heading text-xl font-bold text-sereno-dark">Terapeutas Experientes</h4>
+                                <p class="text-sm text-gray-500">Profissionais qualificados.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-sereno-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 max-w-2xl mx-auto">
+                <span class="text-sereno-gold tracking-[0.2em] uppercase text-sm font-semibold mb-2 block">Experiências Sereno</span>
+                <h2 class="text-4xl md:text-5xl font-heading text-sereno-dark mb-4">Nossos Tratamentos</h2>
+                <p class="text-gray-600">Escolha a terapia perfeita para o que seu corpo e mente precisam hoje.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" alt="Massagem Relaxante" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Relaxante</h3>
+                            <span class="text-sereno-sage font-bold">50/80 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Movimentos suaves e rítmicos que promovem relaxamento muscular profundo, aliviam o estresse e melhoram a circulação sanguínea.
+                        </p>
+                        <button onclick="openWhatsApp('Massagem Relaxante')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1544161514-6311ce66850c?q=80&w=2070&auto=format&fit=crop" alt="Massagem Terapêutica" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Terapêutica</h3>
+                            <span class="text-sereno-sage font-bold">60 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Focada em áreas de tensão crônica. Utiliza pressão mais firme para desfazer nós musculares e tratar dores específicas.
+                        </p>
+                        <button onclick="openWhatsApp('Massagem Terapêutica')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1620052581691-872e48fa2666?q=80&w=2070&auto=format&fit=crop" alt="Drenagem Linfática" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Drenagem Linfática</h3>
+                            <span class="text-sereno-sage font-bold">50 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Técnica de massagem que estimula o sistema linfático, reduzindo o inchaço, a retenção de líquidos e eliminando toxinas.
+                        </p>
+                        <button onclick="openWhatsApp('Drenagem Linfática')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="Terapia com Pedras Quentes" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Pedras Quentes</h3>
+                            <span class="text-sereno-sage font-bold">90 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Combinação de massagem relaxante com o calor terapêutico das pedras vulcânicas, equilibrando os centros de energia do corpo.
+                        </p>
+                        <button onclick="openWhatsApp('Terapia com Pedras Quentes')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Reflexologia Podal" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Reflexologia</h3>
+                            <span class="text-sereno-sage font-bold">45 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Massagem em pontos específicos dos pés que correspondem a órgãos do corpo. Alivia o estresse e estimula a cura natural.
+                        </p>
+                        <button onclick="openWhatsApp('Reflexologia')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                    <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop" alt="Spa Facial" class="w-full h-56 object-cover">
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Spa Facial</h3>
+                            <span class="text-sereno-sage font-bold">40 min</span>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
+                            Limpeza suave, esfoliação, massagem lifting facial relaxante e máscara nutritiva. Renovação completa para a sua pele e mente.
+                        </p>
+                        <button onclick="openWhatsApp('Spa Facial')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner CTA Section -->
+    <section class="py-20 bg-sereno-dark relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-heading text-white mb-6">Pronto para sua jornada de bem-estar?</h2>
+            <p class="text-sereno-light mb-10 text-lg font-light">
+                Reserve um tempo para você. Nosso espaço está preparado para te receber com chá quentinho, aromas relaxantes e o melhor atendimento.
+            </p>
+            <button onclick="openWhatsApp()" class="bg-sereno-gold hover:bg-white text-sereno-dark px-10 py-4 rounded-full transition-colors duration-300 shadow-xl text-sm tracking-widest uppercase font-bold inline-flex items-center gap-3">
+                <i class="ph-fill ph-whatsapp text-xl"></i>
+                Falar com a Recepção
+            </button>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-24 bg-sereno-sand">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-heading text-sereno-dark mb-4">O que dizem nossos clientes</h2>
+                <div class="h-1 w-20 bg-sereno-sage mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i class="ph-fill ph-quotes text-4xl text-sereno-light absolute top-6 right-6"></i>
+                    <div class="flex text-sereno-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"A melhor massagem relaxante que já fiz. O ambiente é incrivelmente calmo, a música, o cheirinho do lugar... Saí de lá flutuando. Recomendo de olhos fechados!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-sereno-sage rounded-full flex items-center justify-center text-white font-heading text-xl">M</div>
+                        <div>
+                            <h5 class="font-bold text-sereno-dark">Mariana Costa</h5>
+                            <span class="text-xs text-gray-400">Cliente há 1 ano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i class="ph-fill ph-quotes text-4xl text-sereno-light absolute top-6 right-6"></i>
+                    <div class="flex text-sereno-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Eu sofria muito com dores na lombar devido ao trabalho. A massagem terapêutica da Sereno mudou minha qualidade de vida. As terapeutas são super atenciosas e profissionais."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-sereno-sage rounded-full flex items-center justify-center text-white font-heading text-xl">R</div>
+                        <div>
+                            <h5 class="font-bold text-sereno-dark">Roberto Silva</h5>
+                            <span class="text-xs text-gray-400">Tratamento Contínuo</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i class="ph-fill ph-quotes text-4xl text-sereno-light absolute top-6 right-6"></i>
+                    <div class="flex text-sereno-gold mb-4 text-sm">
+                        <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">"Fiz a terapia com pedras quentes e foi uma experiência divina. Um verdadeiro presente que me dei de aniversário. O espaço físico é maravilhoso, limpo e muito cheiroso."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-sereno-sage rounded-full flex items-center justify-center text-white font-heading text-xl">C</div>
+                        <div>
+                            <h5 class="font-bold text-sereno-dark">Camila Fernandes</h5>
+                            <span class="text-xs text-gray-400">Primeira visita</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contato" class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="font-heading text-3xl font-semibold text-sereno-dark tracking-widest uppercase block mb-6">
+                        Sereno<span class="text-sereno-sage">.</span>
+                    </a>
+                    <p class="text-gray-500 mb-6 text-sm leading-relaxed">
+                        Seu espaço dedicado à paz, relaxamento e cura interior. Reserve um tempo para o seu bem-estar.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-sereno-sage hover:text-sereno-dark transition-colors"><i class="ph ph-instagram-logo text-2xl"></i></a>
+                        <a href="#" class="text-sereno-sage hover:text-sereno-dark transition-colors"><i class="ph ph-facebook-logo text-2xl"></i></a>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl text-sereno-dark mb-6">Contato</h4>
+                    <ul class="space-y-4 text-sm text-gray-600">
+                        <li class="flex items-start gap-3">
+                            <i class="ph ph-map-pin text-sereno-sage text-xl mt-0.5"></i>
+                            <span>Rua das Camélias, 123 - Sala 4<br>Jardim Primavera, SP<br>CEP 00000-000</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-phone text-sereno-sage text-xl"></i>
+                            <span>(11) 99999-0000</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="ph ph-envelope text-sereno-sage text-xl"></i>
+                            <span>ola@serenobemestar.com.br</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl text-sereno-dark mb-6">Horário</h4>
+                    <ul class="space-y-3 text-sm text-gray-600">
+                        <li class="flex justify-between border-b border-gray-100 pb-2">
+                            <span>Seg - Sex</span>
+                            <span class="font-medium text-sereno-dark">09:00 - 20:00</span>
+                        </li>
+                        <li class="flex justify-between border-b border-gray-100 pb-2">
+                            <span>Sábado</span>
+                            <span class="font-medium text-sereno-dark">09:00 - 16:00</span>
+                        </li>
+                        <li class="flex justify-between pb-2 text-gray-400">
+                            <span>Domingo</span>
+                            <span>Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-heading font-bold text-xl text-sereno-dark mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#sobre" class="text-gray-600 hover:text-sereno-sage transition-colors">Nossa História</a></li>
+                        <li><a href="#servicos" class="text-gray-600 hover:text-sereno-sage transition-colors">Tratamentos</a></li>
+                        <li><a href="#contato" class="text-gray-600 hover:text-sereno-sage transition-colors">Localização</a></li>
+                        <li><a href="#" class="text-gray-600 hover:text-sereno-sage transition-colors">Política de Cancelamento</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-16 pt-8 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-gray-400 text-sm">
+                    &copy; <span id="year"></span> SERENO Massoterapia e Bem-estar. Todos os direitos reservados.
+                </p>
+                <div class="text-sm text-gray-400 flex gap-4">
+                    <a href="#" class="hover:text-sereno-dark">Termos de Uso</a>
+                    <a href="#" class="hover:text-sereno-dark">Privacidade</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed WhatsApp Button (Floating) -->
+    <button onclick="openWhatsApp()" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:bg-[#1ebd5a] hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group" aria-label="Falar no WhatsApp">
+        <i class="ph-fill ph-whatsapp text-3xl"></i>
+        <span class="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 ease-in-out whitespace-nowrap pl-0 group-hover:pl-2 font-semibold">Agendar Agora</span>
+    </button>
+
+    <!-- Custom Scripts -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('shadow-sm');
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('shadow-sm');
+                navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+            }
+        });
+
+        // WhatsApp Integration Function
+        function openWhatsApp(serviceName = '') {
+            // Substitua por seu número real (com código do país e DDD, ex: 5511999999999)
+            const phoneNumber = '5511999990000'; 
+            let message = 'Olá! Gostaria de saber mais informações e agendar um horário.';
+            
+            if (serviceName) {
+                message = `Olá! Tenho interesse no serviço de *${serviceName}* e gostaria de agendar um horário.`;
+            }
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</body>
+</html>
