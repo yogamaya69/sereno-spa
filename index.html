@@ -195,108 +195,153 @@
                 <p class="text-gray-600">Escolha a terapia perfeita para o que seu corpo e mente precisam hoje.</p>
             </div>
 
+            <!-- Alterado para 3 colunas em telas grandes, 2 em médias, e gap ajustado -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                
+                <!-- Treatment 1: Yoga Terapia -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop" alt="Yoga Terapia" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Yoga Terapia</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Uma abordagem terapêutica baseada em práticas de yoga, utilizando movimentos, posturas, respiração, relaxamento e atenção plena de acordo com as necessidades individuais.
+                        </p>
+                        <button onclick="openWhatsApp('Yoga Terapia')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Treatment 2: Terapias Holísticas / Ayurvédica -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop" alt="Terapias Holísticas / Ayurvédica" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Terapias Holísticas</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Com abordagem ayurvédica. Trabalhamos o conceito de equilíbrio entre corpo, mente e bem-estar, trazendo princípios e práticas inspiradas no Ayurveda.
+                        </p>
+                        <button onclick="openWhatsApp('Terapias Holísticas e Ayurvédica')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Treatment 3: Shiatsu -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1544161514-6311ce66850c?q=80&w=2070&auto=format&fit=crop" alt="Shiatsu" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Shiatsu</h3>
+                        </div>
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Técnica de origem japonesa que utiliza pressões em pontos específicos do corpo, buscando promover relaxamento, equilíbrio e bem-estar.
+                        </p>
+                        <button onclick="openWhatsApp('Shiatsu')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
+                            Agendar <i class="ph ph-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Treatment 4: Massagem Relaxante -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
                     <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop" alt="Massagem Relaxante" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Relaxante</h3>
-                            <span class="text-sereno-sage font-bold">50/80 min</span>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Movimentos suaves e rítmicos que promovem relaxamento muscular profundo, aliviam o estresse e melhoram a circulação sanguínea.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Voltada para relaxamento físico e mental, redução da tensão muscular e criação de uma experiência de descanso profundo.
                         </p>
-                        <button onclick="openWhatsApp('Massagem Relaxante')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Massagem Relaxante')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1544161514-6311ce66850c?q=80&w=2070&auto=format&fit=crop" alt="Massagem Terapêutica" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                <!-- Treatment 5: Massagem Desportiva -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2020&auto=format&fit=crop" alt="Massagem Desportiva" class="w-full h-56 object-cover" style="filter: grayscale(30%);">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Terapêutica</h3>
-                            <span class="text-sereno-sage font-bold">60 min</span>
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Desportiva</h3>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Focada em áreas de tensão crônica. Utiliza pressão mais firme para desfazer nós musculares e tratar dores específicas.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Voltada para pessoas fisicamente ativas, com foco em preparação, recuperação muscular e alívio de tensões relacionadas à prática esportiva.
                         </p>
-                        <button onclick="openWhatsApp('Massagem Terapêutica')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Massagem Desportiva')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
+                <!-- Treatment 6: Drenagem Linfática -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
                     <img src="https://images.unsplash.com/photo-1620052581691-872e48fa2666?q=80&w=2070&auto=format&fit=crop" alt="Drenagem Linfática" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
                             <h3 class="text-2xl font-heading font-bold text-sereno-dark">Drenagem Linfática</h3>
-                            <span class="text-sereno-sage font-bold">50 min</span>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Técnica de massagem que estimula o sistema linfático, reduzindo o inchaço, a retenção de líquidos e eliminando toxinas.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Técnica manual realizada com movimentos específicos e suaves, tradicionalmente utilizada para estimular o sistema linfático e auxiliar na redução de edema.
                         </p>
-                        <button onclick="openWhatsApp('Drenagem Linfática')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Drenagem Linfática')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service 4 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?q=80&w=2070&auto=format&fit=crop" alt="Terapia com Pedras Quentes" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                <!-- Treatment 7: Massagem Modeladora -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop" alt="Massagem Modeladora" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Pedras Quentes</h3>
-                            <span class="text-sereno-sage font-bold">90 min</span>
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Massagem Modeladora</h3>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Combinação de massagem relaxante com o calor terapêutico das pedras vulcânicas, equilibrando os centros de energia do corpo.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Massagem com movimentos mais firmes e intensos, direcionada ao trabalho corporal e à modelagem da silhueta.
                         </p>
-                        <button onclick="openWhatsApp('Terapia com Pedras Quentes')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Massagem Modeladora')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service 5 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=2070&auto=format&fit=crop" alt="Reflexologia Podal" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                <!-- Treatment 8: Meditação -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2099&auto=format&fit=crop" alt="Meditação" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Reflexologia</h3>
-                            <span class="text-sereno-sage font-bold">45 min</span>
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Meditação</h3>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Massagem em pontos específicos dos pés que correspondem a órgãos do corpo. Alivia o estresse e estimula a cura natural.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Práticas guiadas de meditação voltadas para presença, relaxamento, consciência corporal e conexão consigo mesma.
                         </p>
-                        <button onclick="openWhatsApp('Reflexologia')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Meditação')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
 
-                <!-- Service 6 -->
-                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100">
-                    <img src="https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2073&auto=format&fit=crop" alt="Spa Facial" class="w-full h-56 object-cover">
-                    <div class="p-8">
+                <!-- Treatment 9: Respiração Terapêutica -->
+                <div class="bg-white rounded-2xl overflow-hidden service-card border border-gray-100 flex flex-col">
+                    <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?q=80&w=2070&auto=format&fit=crop" alt="Respiração Terapêutica" class="w-full h-56 object-cover">
+                    <div class="p-8 flex-grow flex flex-col">
                         <div class="flex justify-between items-start mb-4">
-                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Spa Facial</h3>
-                            <span class="text-sereno-sage font-bold">40 min</span>
+                            <h3 class="text-2xl font-heading font-bold text-sereno-dark">Respiração Terapêutica</h3>
                         </div>
-                        <p class="text-gray-600 mb-6 text-sm leading-relaxed">
-                            Limpeza suave, esfoliação, massagem lifting facial relaxante e máscara nutritiva. Renovação completa para a sua pele e mente.
+                        <p class="text-gray-600 mb-6 text-sm leading-relaxed flex-grow">
+                            Práticas respiratórias conscientes utilizadas como ferramenta de relaxamento, presença, regulação e conexão corpo-mente.
                         </p>
-                        <button onclick="openWhatsApp('Spa Facial')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2">
+                        <button onclick="openWhatsApp('Respiração Terapêutica')" class="text-sereno-dark font-bold uppercase text-sm tracking-wider border-b-2 border-sereno-sage pb-1 hover:text-sereno-sage transition-colors flex items-center gap-2 self-start mt-auto">
                             Agendar <i class="ph ph-arrow-right"></i>
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
